@@ -33,7 +33,7 @@ userRouter.post("/login",async(req,res)=>{
                 const token = jwt.sign({userID:user._id,firstname:user.firstname},"arsalan")
                 res.status(200).json({msg:"Login Successful",token})
             }else{
-                res.status(500).json({err: "Invalid Credentials"});
+                res.status(500).json(err);
             }
         });
     }catch(err){
